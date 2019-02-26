@@ -15,7 +15,7 @@ class Settings:
 
 
 class BookForm(forms.ModelForm):
-    publication_date = forms.DateField(input_formats=Settings.DATE_INPUT_FORMATS, localize=True)
+    publication_date = forms.DateField(input_formats=Settings.DATE_INPUT_FORMATS)
 
     class Meta:
         model = Book
