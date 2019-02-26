@@ -28,7 +28,7 @@ window.CSRF_TOKEN = "{{ csrf_token }}";
     </tr>
     </thead>
     <tbody>
-    {% for book in book_list %}
+    {% for book in books %}
     <tr>
         <td>{{ book.id }}</td>
         <td>{{ book.title }}</td>
