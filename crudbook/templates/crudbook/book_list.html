@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block javascript %}
+<script src="{% static 'crudbook/js/books.js' %}">
+window.CSRF_TOKEN = "{{ csrf_token }}";
+</script>
+{% endblock %}
 
 {% block content %}
 <h1 class="page-header">Books</h1>
@@ -8,6 +14,7 @@
         New book
     </button>
 </p>
+
 <table class="table" id="book-table">
     <thead>
     <tr>
@@ -44,4 +51,4 @@
         </div>
     </div>
 </div>
-    {% endblock %}
+{% endblock content %}

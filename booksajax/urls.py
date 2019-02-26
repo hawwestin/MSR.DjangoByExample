@@ -14,11 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from crudbook import views
+from django.urls import path, include
+from crudbook.views import index
 
 urlpatterns = [
-    path('books/', views.book_list, name='book_list'),
+    path('', index, name='index'),
+    path('books/', include('crudbook.urls', namespace='books')),
     path('admin/', admin.site.urls),
-    path('books/create/', views.book_create, name='book_create'),
 ]

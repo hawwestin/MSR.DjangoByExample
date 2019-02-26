@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 from .models import Book
 from .forms import BookForm
+
+
+def index(request):
+    return redirect('crudbook:book_list')
 
 
 def book_list(request):
@@ -13,7 +17,7 @@ def book_list(request):
 def book_create(request):
     form = BookForm()
     context = {'form': form}
-    html_form = render_to_string('books/includes/partial_book_create.html',
+    html_form = render_to_string('includes/partial_book_create.html',
                                  context,
                                  request=request
                                  )
