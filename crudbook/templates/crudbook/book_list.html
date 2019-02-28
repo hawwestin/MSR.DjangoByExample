@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block javascript %}
-<script src="{% static 'crudbook/js/books.js' %}">
-window.CSRF_TOKEN = "{{ csrf_token }}";
-
-
-</script>
+<script src="{% static 'crudbook/js/books.js' %}">window.CSRF_TOKEN = "{{ csrf_token }}";</script>
 {% endblock %}
 
 {% block content %}
 <h1 class="page-header">Books</h1>
 <p>
-    <button type="button" class="btn btn-primary js-create-book">
+    <button type="button"
+            class="btn btn-primary js-create-book"
+            data-url="{% url 'crudbook:book_create' %}">
         <span class="glyphicon glyphicon-plus"></span>
         New book
     </button>

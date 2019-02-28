@@ -19,6 +19,6 @@ from crudbook.views import index
 
 urlpatterns = [
     path('', index, name='index'),
-    path('books/', include('crudbook.urls', namespace='books')),
+    path('books/', include('crudbook.urls', namespace='crudbook')),
     path('admin/', admin.site.urls),
 ]
