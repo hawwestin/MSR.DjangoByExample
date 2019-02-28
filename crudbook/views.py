@@ -47,3 +47,20 @@ def book_update(request, pk):
     else:
         form = BookForm(instance=book)
     return save_book_form(request, form, 'crudbook/includes/partial_book_update.html')
+
+
+def book_delete(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    data = dict()
+    if request.method == 'POST':
+        book.delete()
+        data['form_is_valid'] = True
+        books = Book.objects.all()
+        data['html_book_list'] = render_to_string('crudbook/includes/partial_book_list.html',
+                                                  context={'books': books})
+    else:
+        context = {'book': book}
+        data['html_form'] = render_to_string('crudbook/includes/partial_book_delete.html',
+                                             context,
+                                             request=request)
+    return JsonResponse(data)
