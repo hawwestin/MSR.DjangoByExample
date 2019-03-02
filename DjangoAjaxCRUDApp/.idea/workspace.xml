@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecb0667e-6902-45a2-b6ba-a9be04c0dba2" name="Default Changelist" comment="" />
+    <list default="true" id="ecb0667e-6902-45a2-b6ba-a9be04c0dba2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../BlogApp/.idea/BlogApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../BlogApp/.idea/BlogApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlogApp/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BlogApp/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlogApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BlogApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BooksAjax.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BooksAjax.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/booksajax/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state relative-caret-position="217">
+              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
               <folding>
                 <element signature="e#310#319#0" expanded="true" />
               </folding>
@@ -142,9 +149,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1272" />
-    <option name="width" value="1297" />
-    <option name="height" value="1398" />
+    <option name="x" value="1271" />
+    <option name="width" value="1298" />
+    <option name="height" value="1399" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -193,7 +200,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BlogApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -356,10 +363,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1018" y="0" width="1037" height="1118" extended-state="0" />
+    <frame x="1017" y="0" width="1038" height="1119" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.288" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28771228" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -370,7 +377,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32928064" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3336714" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50024694" side_tool="true" weight="0.35211268" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -593,8 +600,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/booksajax/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state relative-caret-position="217">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
           <folding>
             <element signature="e#310#319#0" expanded="true" />
           </folding>

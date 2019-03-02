@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="096feeeb-658f-4a32-9a78-bc13383bc85b" name="Default" comment="" />
+    <list default="true" id="096feeeb-658f-4a32-9a78-bc13383bc85b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/BlogApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BlogApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/.idea/BooksAjax.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/.idea/BooksAjax.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BlogWit/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="266">
+              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
               <folding>
                 <element signature="e#308#317#0" expanded="true" />
               </folding>
@@ -33,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BlogWit/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="320">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#631#663#0" expanded="true" />
@@ -95,7 +102,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blog_app/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
+            <state relative-caret-position="60">
               <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
@@ -166,9 +173,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1272" />
-    <option name="width" value="1297" />
-    <option name="height" value="1398" />
+    <option name="x" value="-9" />
+    <option name="width" value="1298" />
+    <option name="height" value="1399" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -200,7 +207,7 @@
     <property name="SearchEverywhereHistoryKey" value="post_publish&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DjangoAjaxCRUDApp" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -514,10 +521,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <frame x="-6" y="0" width="1037" height="1118" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.10962963" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.222" />
       <window_info id="Structure" order="2" weight="0.24950299" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50024694" side_tool="true" weight="0.32897383" />
       <window_info anchor="bottom" id="Version Control" order="1" />
@@ -719,8 +726,8 @@
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/auth/views.py" />
     <entry file="file://$PROJECT_DIR$/BlogWit/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state relative-caret-position="266">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
           <folding>
             <element signature="e#308#317#0" expanded="true" />
           </folding>
@@ -729,7 +736,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BlogWit/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="320">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#631#663#0" expanded="true" />
@@ -777,7 +784,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog_app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="60">
           <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
