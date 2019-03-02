@@ -1,0 +1,21 @@
+{% extends 'blog_app/base.html' %}
+
+
+{% block content %}
+    <div class="jumbotron">
+
+        <h2>Zaloguj: </h2>
+        <h3>(Musisz być zarejestrownym i potwierdzonym użytkownikiem przez administratora.)</h3>
+        {% if form.errors %}
+            <p>Wprowadzone hasło jest nie poprawne</p>
+        {% endif %}
+
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" class='btn btn-primary' value="Zaloguj"/>
+            <input type="hidden" name="next" value="{{ next }}"/>
+        </form>
+    </div>
+{% endblock %}

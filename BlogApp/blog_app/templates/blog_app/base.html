@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <title>Blog WIT</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"#}
+    {#          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">#}
+
+    {#     MEDIUM STYLE EDITOR#}
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css"
+          type="text/css" media="screen" charset="utf-8">
+
+    {# Custom CSS#}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+    {# Fonts#}
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto|Ubuntu" rel="stylesheet">
+
+
+<body class=''>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark techfont custom-navbar">
+    <div class="container">
+
+        <a class='navbar-brand bigbrand' href="{% url 'blog_app:post_list' %}">Blog Wit</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'blog_app:about' %}">O mnie</a></li>
+            <li class="nav-item active">
+                <a class="nav-link" target="_blank" href="https://github.com/hawwestin">Github</a></li>
+
+        </ul>
+
+        <ul class="nav navbar-expand-lg navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'blog_app:post_new' %}">Dodaj post</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'blog_app:post_draft_list' %}">Robocze</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'logout' %}">Wyloguj</a>
+                </li>
+
+{#                <li class="nav-item active">#}
+{#                    <a class="nav-link">Witaj {{ user.username }}</a>#}
+{#                </li>#}
+            {% else %}
+                <li class="nav-item active">
+                    <a class='nav nav-link navbar-right' href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span>Zaloguj</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>
+
+{# The actual blog posts#}
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="blog_posts">
+                {% block content %}
+                {% endblock %}
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{# SCRIPTS#}
+
+<script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
+
+</body>
+</html>

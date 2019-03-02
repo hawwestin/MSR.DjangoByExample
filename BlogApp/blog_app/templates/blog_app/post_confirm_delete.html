@@ -1,0 +1,9 @@
+{% extends "blog_app/base.html" %}
+{% block content %}
+    <form action="" method="post">{% csrf_token %}
+        <p>Jesteś pewny że chcesz usunąć "{{ object }}"?</p>
+        <input class='btn btn-danger' type="submit" value="Potwierdz"/>
+        <a class="btn btn-primary" href="{% url 'blog_app:post_detail' pk=post.pk %}">Cofnij</a>
+
+    </form>
+{% endblock %}
