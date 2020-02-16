@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="096feeeb-658f-4a32-9a78-bc13383bc85b" name="Default" comment="PyCharm related updates">
-      <change beforePath="$PROJECT_DIR$/.idea/BlogApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BlogApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="096feeeb-658f-4a32-9a78-bc13383bc85b" name="Default" comment="Python related updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog_app/templates/blog_app/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog_app/templates/blog_app/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/crudbook/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DjangoAjaxCRUDApp/crudbook/templates/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +58,11 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\repos\MSR.DjangoByExample\BlogApp\blog_app\static\image" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -369,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551547431414</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Python related updates">
+      <created>1581890185147</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581890185147</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -399,7 +406,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="PyCharm related updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="PyCharm related updates" />
+    <MESSAGE value="Python related updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Python related updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
