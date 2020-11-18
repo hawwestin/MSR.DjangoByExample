@@ -152,4 +152,6 @@ fabric.properties
 .idea/httpRequests
 
 # My 
-.whl
+*.whl
+*.sublime-project
+*.sublime-workspace
