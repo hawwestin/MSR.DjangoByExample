@@ -1,0 +1,61 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	font-family: 'Releway', sans-serif;
+	color: #555;
+}
+
+a{
+    color:white;        
+}
+
+ul{
+	list-style: none;
+}
+
+footer{
+	background-color: #131622;
+	text-align: center;
+	color: white;
+	background: linear-gradient(to bottom, #284e7a ,#000 100%);
+	padding: 4rem 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+footer p{
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	color: rgba(255,255,255,.6);
+	margin-bottom: 0.6rem
+}
+
+footer  ul{
+	margin-bottom:  1.6rem;
+	display: flex;
+	flex-direction: row;
+}
+
+footer ul li{
+	margin: 0 0.5rem;
+}
+
+footer ul li a{
+	font-size:2.1rem;
+	cursor: pointer;
+}
+
+@media(max-width: 800px){
+	footer{
+		padding: 5rem 0.9rem;
+		flex-direction: 
+	}
+}
+
+
