@@ -5,21 +5,53 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Alaska</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
     <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
     <link href="{% static 'spa/css/style.css' %}" rel="stylesheet">
 </head>
 <body>
+    <div class="hero">
+        <div class="backgroud-image"></div>
+        <h1>Beatuiful Alaska Photos</h1>
+        <h3>Breathtaking Landscapes for Youre Viewing Pleasure</h3>
+        <a href="https://github.com/hawwestin" class="btn" target="_blank">More Django Projects!</a>
+    </div>
+    <div class="about">
+        <h3 class="title">Anout Me</h3>
+        <div id="two-cols">
+            <div class="about-img">
+                <img src="{% static 'spa/media/plane.jpg' %}">
+            </div>
+            <div class="about-bio">
+                <p> {% lorem %}</p>
+            </div>            
+        </div>
+        <hr>
+    </div>
+    <div class="gallery">
+        <h3 class="title">Gallery</h3>
+        <p> {% lorem %}</p>
+        <hr>
+        <ul class="grid">
+            <li class="small" style="background-image: url({% static 'spa/media/cloud.jpg' %});">&nbsp;</li>
+            <li class="large" style="background-image: url({% static 'spa/media/iceberg.jpg' %});">&nbsp;</li>
+            <li class="large" style="background-image: url({% static 'spa/media/lake.jpg' %});">&nbsp;</li>
+            <li class="small" style="background-image: url({% static 'spa/media/mountain.jpg' %});">&nbsp;</li>
+        </ul>
+    </div>
+    <hr>
 
-<footer>
-    <ul>
-        <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
-        <li><a href="#" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
-    </ul>
-    <p>&copy; <script> document.write(new Date().getFullYear()); </script> IT is fun to create a website live!!! </p>
-    <p>&ldquo;Tell me and I forget, teach me and I may remember, involve me and I learn.&rdquo; &mdash;Benjamin Franklin</p>    
-</footer>
+    <footer>
+        <ul>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
+        </ul>
+        <p>&copy; <script> document.write(new Date().getFullYear()); </script> IT is fun to create a website live!!! </p>
+        <p>&ldquo;Tell me and I forget, teach me and I may remember, involve me and I learn.&rdquo; &mdash;Benjamin Franklin</p>    
+    </footer>
 </body>
 </html>
