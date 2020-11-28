@@ -255,6 +255,32 @@ Quote
 .famous-quotes .author:last-child{
 	margin-bottom: 0;
 }
+/** 
+-----------------
+Contact
+----------------- **/
+section.flexbox-section{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+section.flexbox-section p{
+	max-width: 900px;
+	text-align: left;
+	margin-bottom: 2rem;
+	padding: 0 1.2rem;
+	line-height: 1.5;
+
+}
+
+.contact-form {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
 
 /** 
 -----------------
