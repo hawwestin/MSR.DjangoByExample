@@ -10,7 +10,7 @@ html{
 }
 
 a{
-	color:white;        
+	color: white;
 }
 
 ul{
@@ -36,7 +36,44 @@ hr{
 	margin-bottom: 2.1rem;
 	text-align: center;
 }
+/** 
+-----------------
+Nav
+----------------- **/
 
+header{
+	background-color: rgba(5,5,5,.7);
+	color: white;	
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+
+}
+
+header a{
+	text-decoration: none;
+	opacity: .6;
+	cursor: pointer;
+}
+
+header a:hover{	
+	opacity: 1;	
+}
+
+nav ul{
+	display: flex;
+	flex-direction: row;	
+	justify-content: flex-end;
+}
+
+nav ul li{
+	margin: .5rem .8rem;
+}
 
 
 /** 
@@ -321,9 +358,23 @@ footer ul li a{
 }
 
 @media(max-width: 1000px){
+	header{
+		text-align: center;
+		flex-direction: column;
+		padding: 1.2rem 3rem;
+	}
+	nav{
+		justify-content: space-around;
+	}
+
+	nav ul{		
+		justify-content: center;
+	}
+
 	.gallery .grid li.small, .gallery .grid li.large{
 		flex-basis: 100%;
 	}
+
 	.gallery .grid li{
 		height: 400px;
 	}
