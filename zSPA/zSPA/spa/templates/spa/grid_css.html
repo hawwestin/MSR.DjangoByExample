@@ -1,12 +1,25 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="{% static 'spa/media/favicon_mount.png' %}" rel="icon" sizes="16x16" type="image/png">
     <title>Css Grid Layout</title>
+    <link href="{% static 'spa/css/grid.css' %}" rel="stylesheet">    
 </head>
 <body>
-<h1> hello</h1>
+	<main id="container">
+		<header>HEADER</header>
+		<nav>NAV</nav>
+		<div id="login">LOG-IN</div>
+		<div id="career">Enchance Your Career</div>
+		<div id="stats">Important Stats</div>
+		<div id="apps">Buiild APPs</div>
+		<div id="games">Build Games</div>
+		<div id="websites">Build Websites</div>
+		<footer>Footer</footer>
+		
+	</main>
 </body>
 </html>

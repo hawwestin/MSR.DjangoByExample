@@ -1,0 +1,149 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #131633;
+	color: white;
+	line-height: 1.5;
+}
+
+header{
+	grid-area: header;
+	background-color: grey;
+
+}
+
+nav{
+	grid-area: nav;
+	background-color: darkviolet;
+
+}
+
+main{
+	width: 90%;
+	max-width: 800px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 10vh 4vh 38vh 38vh 10vh;
+	grid-gap: 1rem;
+	margin: 0 auto;
+}
+
+#container{
+	grid-template-areas: 
+	"header header header"
+	"nav nav nav"
+	"login career stats"
+	"apps games websites"
+	"footer footer footer"
+}
+
+#login{
+	grid-area: login;
+	background-color: red;
+
+}
+#career{
+	grid-area: career;
+	background-color: blue;
+
+}
+#stats{
+	grid-area: stats;
+	background-color: green;
+
+}
+#apps{
+	grid-area: apps;
+	background-color: olive;
+
+}
+#games{
+	grid-area: games;
+	background-color: chocolate;
+
+}
+#websites{
+	grid-area: websites;
+	background-color: #85D4AC;
+
+}
+
+footer{
+	grid-area: footer;
+	background-color: crimson;
+
+}
+
+@media screen and (min-width: 1100px){
+	main{
+		width: 90%;
+		max-width: 800px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 10vh 4vh 38vh 38vh 10vh;
+		grid-gap: 1rem;
+		margin: 0 auto;
+	}
+
+	#container{
+		grid-template-areas: 
+		"header header header"
+		"nav nav nav"
+		"login career stats"
+		"apps games websites"
+		"footer footer footer"
+	}
+}
+
+@media screen and (max-width: 1100px){
+	main{
+		width: 90%;
+		max-width: 800px;
+		display: grid;
+		grid-template-columns: 1fr 1fr ;
+		grid-template-rows: 10vh 4vh 25vh 25vh 25vh 10vh;
+		grid-gap: 1rem;
+		margin: 0 auto;
+	}
+
+	#container{
+		grid-template-areas: 
+		"header header"
+		"nav nav"
+		"login career"
+		"stats apps"
+		"games websites"
+		"footer footer "
+	}
+}
+
+
+@media screen and (max-width: 500px){
+	main{
+		width: 90%;
+		max-width: 800px;
+		display: grid;
+		grid-template-columns: 1fr ;
+		grid-template-rows: 10vh 4vh 25vh 25vh 25vh 25vh 25vh 25vh 10vh;
+		grid-gap: 1rem;
+		margin: 0 auto;
+	}
+
+	#container{
+		grid-template-areas: 
+		"header "
+		"nav "
+		"login"
+		"career"
+		"stats"
+		"apps"
+		"games"
+		"websites"
+		"footer"
+	}
+}
