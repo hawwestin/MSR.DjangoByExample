@@ -20,4 +20,5 @@ from . import views
 app_name = 'spa'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('grid', views.grid_css, name='grid'),
 ]
