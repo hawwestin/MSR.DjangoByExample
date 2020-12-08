@@ -11,17 +11,98 @@ body{
 	line-height: 1.5;
 }
 
+/*
+Business styles 
+*/
+
+header h1{
+	font-size: 3.25rem;
+	text-align: center;
+	color: white;
+	margin-bottom: 1.2rem;
+	text-shadow: 2px 2px #22638e;
+}
+
+.options{
+	width: 95%;
+	background-color: white;
+	
+	border-top: 3px solid #3498db;
+	border-radius: 3px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.options-link{
+	text-decoration: none;
+	color: #717070;
+	font-size: .9rem;
+}
+
+.options-link:hover{
+	text-decoration: underline;	
+	color: #229922;
+	font-size: .9rem;
+}
+
+.card{
+	background-color: white;
+	color: #000;
+
+}
+
+.card--blue{
+	background-color: #9ebcf5;
+	
+}
+
+/*
+Grid area 
+*/
 header{
 	grid-area: header;
-	background-color: grey;
-
 }
 
 nav{
 	grid-area: nav;
-	background-color: darkviolet;
-
 }
+
+#login{
+	grid-area: login;
+}
+
+#career{
+	grid-area: career;
+}
+
+#stats{
+	grid-area: stats;
+}
+
+#apps{
+	grid-area: apps;
+}
+
+#games{
+	grid-area: games;
+}
+
+#websites{
+	grid-area: websites;
+}
+
+footer{
+	grid-area: footer;
+	margin: 1.2rem 0;
+	text-align: center;
+}
+
+/*
+Media
+*/
+
 
 main{
 	width: 90%;
@@ -42,42 +123,7 @@ main{
 	"footer footer footer"
 }
 
-#login{
-	grid-area: login;
-	background-color: red;
 
-}
-#career{
-	grid-area: career;
-	background-color: blue;
-
-}
-#stats{
-	grid-area: stats;
-	background-color: green;
-
-}
-#apps{
-	grid-area: apps;
-	background-color: olive;
-
-}
-#games{
-	grid-area: games;
-	background-color: chocolate;
-
-}
-#websites{
-	grid-area: websites;
-	background-color: #85D4AC;
-
-}
-
-footer{
-	grid-area: footer;
-	background-color: crimson;
-
-}
 
 @media screen and (min-width: 1100px){
 	main{
