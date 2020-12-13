@@ -104,6 +104,19 @@ section img{
 	border: 4px solid #4f97d5;
 }
 
+.btn{		
+	color: white;
+	background: #3498db;
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 28px;
+	margin-top: 2%;
+}
+
+.btn:hover{
+	background: #3cb0fd;
+}
+
 /*
 Grid area 
 */
@@ -214,18 +227,7 @@ Media
 		margin: 3% 0 0;
 	}
 
-	.btn{		
-		color: white;
-		background: #3498db;
-		display: inline-block;
-		padding: 10px 20px;
-		border-radius: 28px;
-		margin-top: 2%;
-	}
 
-	.btn:hover{
-		background: #3cb0fd;
-	}
 }
 
 @media screen and (max-width: 500px){
