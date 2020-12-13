@@ -34,7 +34,14 @@ input{
 
 section{
 	padding: 10px;
-	text-align: center;
+	text-align: center;	
+
+	flex-grow: 1;
+}
+
+section p{
+	text-align: left;
+	align-self: flex-start;
 }
 
 section img{
@@ -65,20 +72,34 @@ section img{
 	font-size: .9rem;
 }
 
+.btn{		
+	color: white;
+	background: #3498db;
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 28px;	
+	align-self: center;
+	margin-bottom: 10px;
+}
+
+.btn:hover{
+	background: #3cb0fd;
+}
+
 .card{
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
+	display: flex;
+	flex-direction: column;
 }
 
 .card--white{
 	background-color: white;
 	color: #000;
-
 }
 
 .card--blue{
-	background-color: #9ebcf5;
-	
+	background-color: #9ebcf5;	
 }
 
 .card-title{
@@ -87,16 +108,16 @@ section img{
 	font-size: 1.25rem;
 	padding: 5px;
 	margin-bottom: 10px;
-	text-align: center;
+	text-align: center;	
 }
 
 .graphs{
 	font-size: 100px;
 	line-height: 1;
 	margin: 10px 0px 20px 0px;
-
 	text-align: center;
 }
+
 .profile{
 	width: 50%;
 	border-radius: 50%;
@@ -104,18 +125,6 @@ section img{
 	border: 4px solid #4f97d5;
 }
 
-.btn{		
-	color: white;
-	background: #3498db;
-	display: inline-block;
-	padding: 10px 20px;
-	border-radius: 28px;
-	margin-top: 2%;
-}
-
-.btn:hover{
-	background: #3cb0fd;
-}
 
 /*
 Grid area 
