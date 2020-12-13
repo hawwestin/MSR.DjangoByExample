@@ -23,6 +23,25 @@ header h1{
 	text-shadow: 2px 2px #22638e;
 }
 
+input{
+	width: 85%;
+	color: darkblue;
+	background-color: aliceblue;
+	font-size: 1.25rem;
+	padding: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+section{
+	padding: 10px;
+	text-align: center;
+}
+
+section img{
+	max-width: 100%
+}
+
 .options{
 	width: 95%;
 	background-color: white;
@@ -57,6 +76,31 @@ header h1{
 	background-color: #9ebcf5;
 	
 }
+
+.card-title{
+	color: white;
+	background-color: #4f97d5;
+	font-size: 1.25rem;
+	padding: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.graphs{
+	font-size: 100px;
+	line-height: 1;
+	margin: 10px 0px 20px 0px;
+
+	text-align: center;
+}
+.profile{
+	width: 50%;
+	border-radius: 50%;
+	margin-bottom: 5px;
+	border: 4px solid #4f97d5;
+}
+
+
 
 /*
 Grid area 
@@ -103,32 +147,10 @@ footer{
 Media
 */
 
-
-main{
-	width: 90%;
-	max-width: 800px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 10vh 4vh 38vh 38vh 10vh;
-	grid-gap: 1rem;
-	margin: 0 auto;
-}
-
-#container{
-	grid-template-areas: 
-	"header header header"
-	"nav nav nav"
-	"login career stats"
-	"apps games websites"
-	"footer footer footer"
-}
-
-
-
 @media screen and (min-width: 1100px){
 	main{
 		width: 90%;
-		max-width: 800px;
+		max-width: 1000px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 10vh 4vh 38vh 38vh 10vh;
