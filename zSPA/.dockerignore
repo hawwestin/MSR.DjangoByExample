@@ -1,0 +1,6 @@
+.idea
+venv/
+active.sh
+docker-compose.yml
+Dockerfile
+sublime*/
