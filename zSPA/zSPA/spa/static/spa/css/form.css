@@ -25,6 +25,20 @@ body{
 	padding: 1%;
 }
 
+#left-column input{
+	width: 90%;
+	padding: 5px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+#left-column fieldset p{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
 #right-column{
 	width: 50%;
 	padding: 1%;
