@@ -1,9 +1,42 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="{% static 'spa/media/favicon_mount.png' %}" rel="icon" sizes="16x16" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<title>Form</title>
+	<link href="{% static 'spa/css/form.css' %}" rel="stylesheet">    
 </head>
 <body>
-<p>Hello</p>
+<div>
+	<h2>My Form</h2>
+	<form id="formwrapper">
+		<section id="left-coulmn">
+			<fieldset>
+				<legend>Block One</legend>
+			</fieldset>
+			<fieldset>	
+				<legend>Block Two</legend>
+			</fieldset>
+			
+		</section>
+		<section id="right-coulmn">
+			<fieldset>	
+				<legend>Block Three</legend>
+			</fieldset>
+			<fieldset>
+				<legend>Block Four</legend>
+			</fieldset>
+			
+		</section>
+		
+	</form>
+
+</div>
+<footer>
+	<img src="{% static 'spa/media/favicon.png' %}">
+</footer>
 </body>
 </html>
