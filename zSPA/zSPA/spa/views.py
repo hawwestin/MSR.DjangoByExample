@@ -9,3 +9,7 @@ def index(request, **kwargs):
 
 def grid_css(request, **kwargs):
     return render(request, 'spa/grid_css.html')
+
+def form_example(request, **kwargs):
+	return render(request, 'spa/form_example.html')
+	
