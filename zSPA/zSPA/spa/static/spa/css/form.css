@@ -30,6 +30,13 @@ body{
 	padding: 1%;
 }
 
+
+#right-column fieldset p{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
 footer{
 	text-align: center;
 }

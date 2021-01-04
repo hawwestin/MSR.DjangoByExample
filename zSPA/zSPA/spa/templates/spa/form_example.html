@@ -10,33 +10,53 @@
 	<link href="{% static 'spa/css/form.css' %}" rel="stylesheet">    
 </head>
 <body>
-<div id="divwrapper">
-	<h2>My Form</h2>
-	<form id="formwrapper">
-		<section id="left-column">
-			<fieldset>
-				<legend>Block One</legend>
-			</fieldset>
-			<fieldset>	
-				<legend>Block Two</legend>
-			</fieldset>
-			
-		</section>
-		<section id="right-column">
-			<fieldset>	
-				<legend>Block Three</legend>
-			</fieldset>
-			<fieldset>
-				<legend>Block Four</legend>
-			</fieldset>
-			
-		</section>
-		
-	</form>
+	<div id="divwrapper">
+		<h2>My Form</h2>
+		<form id="formwrapper">
+			<section id="left-column">
+				<fieldset>
+					<legend>Block One</legend>
+				</fieldset>
+				<fieldset>	
+					<legend>Block Two</legend>
+				</fieldset>
 
-</div>
-<footer>
-	<img src="{% static 'spa/media/favicon.png' %}">
-</footer>
+			</section>
+			<section id="right-column">
+				<fieldset>	
+					<legend>Block Three</legend>
+					<p>
+						<span><input type="radio" name="color" value="red">Red</span>
+						<span><input type="radio" name="color" value="Green">Green</span>
+						<span><input type="radio" name="color" value="Blue">Blue</span>
+						<span><input type="radio" name="color" value="Cyan">Cyan</span>
+						<span><input type="radio" name="color" value="Magenta">Magenta</span>
+						<span><input type="radio" name="color" value="Yellow">Yellow</span>
+					</p>
+					<p>
+						<span><input type="checkbox" name="fruit" value="apple">Apple</span>
+						<span><input type="checkbox" name="fruit" value="orange">Orange</span>
+						<span><input type="checkbox" name="fruit" value="banana">Banana</span>
+						<span><input type="checkbox" name="fruit" value="peach">Peach</span>
+						<span><input type="checkbox" name="fruit" value="pear">Pear</span>
+						<span><input type="checkbox" name="fruit" value="plumb">Plumb</span>
+						
+					</p>
+
+				</fieldset>
+				<fieldset>
+					<legend>Block Four</legend>
+					<textarea rows="4" cols="40" placeholder="What Did you do?"></textarea>
+					<p><input type="submit" name="Submit"></p>
+				</fieldset>
+
+			</section>
+
+		</form>
+
+	</div>
+	<footer>
+		<img src="{% static 'spa/media/favicon.png' %}">
+	</footer>
 </body>
 </html>
