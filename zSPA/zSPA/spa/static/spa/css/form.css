@@ -1,0 +1,72 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	background-color: cadetblue;
+	background: linear-gradient(90deg, cadetblue, #5085A0);
+	color: black;	
+	margin: 20px;
+}
+
+#divwrapper, fieldset{
+	background-color: aliceblue;
+	max-width: 900px;
+	min-height: 100px;
+	border-radius: 10px;
+	padding: 2%
+	margin:0 auto 10px;
+}
+
+#formwrapper{
+	display: flex;
+	flex-direction: row;
+}
+
+#left-column{
+	width: 50%;
+	padding: 1%;
+}
+
+#left-column input{
+	width: 90%;
+	padding: 5px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+#left-column fieldset p{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+#right-column{
+	width: 50%;
+	padding: 1%;
+}
+
+
+#right-column fieldset p{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+footer{
+	text-align: center;
+}
+
+@media(max-width: 900px){
+	#formwrapper{
+		flex-direction: column;
+	}
+	#left-column{
+		width: 100%;
+		padding: 0;
+	}
+
+	#right-column{
+		width: 100%;
+		padding: 0;
+	}
+
+}

@@ -150,3 +150,8 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+# My 
+*.whl
+*.sublime-project
+*.sublime-workspace

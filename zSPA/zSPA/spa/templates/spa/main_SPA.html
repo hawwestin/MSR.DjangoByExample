@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'spa/media/favicon_mount.png' %}">
+    <title>Alaska</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
+    <link href="{% static 'spa/css/style.css' %}" rel="stylesheet">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="{% static 'spa/js/main.js' %}" rel="script"></script>
+</head>
+<body id="top">
+    <header>
+        <h2><a href="#top"><img src="{% static 'spa/media/favicon.png' %}"></a></h2>
+        <nav>
+            <ul>
+                <li><a href="#top">Top</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#getting-around">Travel</a></li>
+                <li><a href="#famous-quotes">Quotes</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="backgroud-image"></div>
+        <h1>Beatuiful Alaska Photos</h1>
+        <h3>Breathtaking Landscapes for Youre Viewing Pleasure</h3>
+        <a href="https://github.com/hawwestin" class="btn" target="_blank">More Django Projects!</a>
+    </div>
+    <div id="about" class="about">
+        <h3 class="title">About Me</h3>
+        <div id="two-cols">
+            <div class="about-img">
+                <img src="{% static 'spa/media/plane.jpg' %}">
+            </div>
+            <div class="about-bio">
+                <p> {% lorem %}</p>
+            </div>            
+        </div>
+        <hr>
+    </div>
+    <div id="gallery" class="gallery">
+        <h3 class="title">Gallery</h3>
+        <p> {% lorem %}</p>
+        <hr>
+        <ul class="grid">
+            <li class="small" style="background-image: url({% static 'spa/media/cloud.jpg' %});">&nbsp;</li>
+            <li class="large" style="background-image: url({% static 'spa/media/iceberg.jpg' %});">&nbsp;</li>
+            <li class="large" style="background-image: url({% static 'spa/media/lake.jpg' %});">&nbsp;</li>
+            <li class="small" style="background-image: url({% static 'spa/media/mountain.jpg' %});">&nbsp;</li>
+        </ul>
+    </div>
+    <hr>
+    <div id="getting-around" class="getting-around">
+        <h3 class="title">Ways of Traveling </h3>
+        <p>
+            {% lorem %}
+        </p>
+        <ul class="grid">
+            <li><i class="fas fa-plane ico"></i>
+                <h4>Airplane</h4>
+                <p>A powered flying vehicle with fixed wings and a weight greater than that of the air it displaces.</p>
+            </li>
+            <li><i class="fas fa-ship ico"></i>
+                <h4>Ship</h4>
+                <p>Cruise Ships A passenger ship used for pleasure voyages, where the voyage itself and the ship's amenities are a part of the experience.</p>
+            </li>
+            <li><i class="fas fa-taxi ico"></i>
+                <h4>Taxi</h4>
+                <p>A motor vehicle licensed to transport passengers in return for payment of a fare.</p>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div id="famous-quotes" class="famous-quotes">
+        <h3 class="title"> What Others Our Saying</h3>
+        <p class="portrait"><img src="{% static 'spa/media/camel.jpg' %}" alt="Camel" class="portrait-photos"></p>
+        <p class="quote">&ldquo;{% lorem 10 w random %}&rdquo;</p>
+        <p class="author">&mdash; Camel </p>
+        <p class="portrait"><img src="{% static 'spa/media/mexicanpesos.jpg' %}" alt="Mexico Pesos" class="portrait-photos"></p>
+        <p class="quote">&ldquo;{% lorem 17 w random %}&rdquo;</p>
+        <p class="author">&mdash; Mexico Pesos </p>
+        <p class="portrait"><img src="{% static 'spa/media/jackson.jpg' %}" alt="Jackson" class="portrait-photos"></p>
+        <p class="quote">&ldquo;{% lorem 21 w random %}&rdquo;</p>
+        <p class="author">&mdash; Jackson </p>
+
+    </div>
+    <hr>
+
+    <div id="contact" class="contact">
+        <h3 class="title">My studio location</h3>
+        <section class="flexbox-section">
+            <p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.5518280491324!2d20.99703905753568!3d52.23335977937822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc8ec2980f6b%3A0x177dfcae988c272e!2sRondo%20ONZ!5e0!3m2!1spl!2spl!4v1606598126847!5m2!1spl!2spl" 
+                width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </p>
+            <p>155 Rondo ONZ<br> Warsaw, 00-124, Maz<br> Poland</p>
+        </section>
+    </div>
+    <div id="contact-form" class="contact-form">
+        <p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZ5MXzeVeJ1d8MpcX94184fQva-KdNdYRhCS8oxnvgRe4k6A/viewform?embedded=true" 
+            width="640" height="1020" frameborder="0" marginheight="0" marginwidth="0">Ładuję…</iframe>
+        </p>
+    </div>
+
+    <footer id="links">
+        <ul>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter-square ico"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-facebook-square ico"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-youtube-square ico"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-pinterest-square ico"></i></a></li>
+        </ul>
+        <p>&copy; <script> document.write(new Date().getFullYear()); </script> IT is fun to create a website live!!! </p>
+        <p>&ldquo;Tell me and I forget, teach me and I may remember, involve me and I learn.&rdquo; &mdash;Benjamin Franklin</p>    
+    </footer>
+</body>
+</html>

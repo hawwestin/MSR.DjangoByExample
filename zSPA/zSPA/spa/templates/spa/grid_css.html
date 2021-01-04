@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="{% static 'spa/media/favicon_mount.png' %}" rel="icon" sizes="16x16" type="image/png">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<title>Css Grid Layout</title>
+	<link href="{% static 'spa/css/grid.css' %}" rel="stylesheet">    
+</head>
+<body>
+	<main id="container">
+		<header>
+			<h1> Some Long Title</h1>
+		</header>
+		<nav class="options">
+			<a href="#" target="_blank" class="options-link">Home</a>
+			<a href="#" target="_blank" class="options-link">Build Apps</a>
+			<a href="#" target="_blank" class="options-link">Build Games</a>
+			<a href="#" target="_blank" class="options-link">Build Websites</a>
+		</nav>
+		<div class="card card--white" id="login">
+			<h2 class="card-title">LOG-IN <span>&#x1F601;&nbsp;</span></h2>
+			<section>
+				<form>
+					<input type="text" name="username" placeholder="Username">
+					<input type="password" name="password" placeholder="Password"></br>
+					<input type="submit" name="submit" value="Submit">
+				</form>
+			</section>
+		</div>
+		<div class="card card--white" id="career">
+			<h2 class="card-title">Enchance Your Career</h2>
+			<section>
+				<img class="section-img profile" src="{% static 'spa/media/img1.jpg' %}">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Certe, nisi voluptatem tanti aestimaretis. Recte, inquit, intellegis. Hic ambiguo ludimur. Contineo me ab exemplis. Tum Torquatus: Prorsus, inquit, assentior; Tum Torquatus: Prorsus, inquit, assentior; Duo Reges: constructio interrete. </p>
+			</section>
+			<a class="btn" href="#">Learn More&#8230;</a>
+		</div>
+		<div class="card card--white" id="stats">
+			<h2 class="card-title">Important Stats</h2>
+			<section>
+				<p>Venit ad extremum; Comprehensum, quod cognitum non habet? Satis est ad hoc responsum. Sed quid sentiat, non videtis. Equidem, sed audistine modo de Carneade? Non igitur bene. Quod ea non occurrentia fingunt, vincunt Aristonem; Nonne igitur tibi videntur, inquit, mala? </p>
+				<p class="graphs">
+					<span>&#x1F4C8;</span>
+					<span>&#128202;</span>
+				</p>
+			</section>
+			<a class="btn" href="#">Learn More&#8230;</a>
+		</div>
+		<div class="card card--blue" id="apps">
+			<h2 class="card-title">Buiild APPs</h2>
+			<section>
+				<p>At certe gravius. Non est igitur summum malum dolor. Eadem fortitudinis ratio reperietur. Sed videbimus. Sed quid sentiat, non videtis. Nos cum te, M. </p>
+				<img src="{% static 'spa/media/favicon.png' %}">
+			</section>
+			<a class="btn" href="#">Learn More&#8230;</a>
+		</div>
+		<div class="card card--blue" id="games">
+			<h2 class="card-title">Build Games</h2>
+			<section>
+				<p>Egone quaeris, inquit, quid sentiam? Praeclarae mortes sunt imperatoriae; At enim sequor utilitatem. De hominibus dici non necesse est. Sed fac ista esse non inportuna; Bonum valitudo: miser morbus. </p>
+				<img src="{% static 'spa/media/favicon.png' %}">
+			</section>
+			<a class="btn" href="#">Learn More&#8230;</a>
+		</div>
+		<div class="card card--blue" id="websites">
+			<h2 class="card-title">Build Websites</h2>
+			<section>
+				<p>Certe, nisi voluptatem tanti aestimaretis. Quorum sine causa fieri nihil putandum est. Quae cum magnifice primo dici viderentur, considerata minus probabantur. Tu vero, inquam, ducas licet, si sequetur; Scisse enim te quis coarguere possit? Summum ením bonum exposuit vacuitatem doloris; Qui est in parvis malis. </p>
+				<img src="{% static 'spa/media/favicon.png' %}">
+			</section>
+			<a class="btn" href="#">Learn More&#8230;</a>
+		</div>
+		<footer>
+			<img src="{% static 'spa/media/favicon.png' %}">
+		</footer>
+
+	</main>
+</body>
+</html>
