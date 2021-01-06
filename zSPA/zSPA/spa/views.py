@@ -1,10 +1,17 @@
 from django.shortcuts import render
 
 
+from spa.models import Images
 # Create your views here.
 
 def index(request, **kwargs):
-    return render(request, 'spa/main_SPA.html')
+	context = {}
+	
+	context = {
+		'images': Images.objects.all()
+	}
+
+	return render(request, 'spa/main_SPA.html', context)
 
 
 def grid_css(request, **kwargs):

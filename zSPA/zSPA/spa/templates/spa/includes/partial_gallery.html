@@ -1,0 +1,7 @@
+{% load static %}
+
+{% for image in images %}
+<li class="{{image.cssClass}}" alt="{{image.description}}" style="background-image: url({% static image.fileName %});">&nbsp;</li>
+{% empty %}
+<li class="empty"> Brak obrazów dostępnych w galerii. </li>
+{% endfor %}

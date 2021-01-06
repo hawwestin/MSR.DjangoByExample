@@ -52,10 +52,13 @@
         <p> {% lorem %}</p>
         <hr>
         <ul class="grid">
-            <li class="small" style="background-image: url({% static 'spa/media/cloud.jpg' %});">&nbsp;</li>
+            {% include 'spa/includes/partial_gallery.html' %}
+
+            <!-- <li class="small" style="background-image: url({% static 'spa/media/cloud.jpg' %});">&nbsp;</li>
             <li class="large" style="background-image: url({% static 'spa/media/iceberg.jpg' %});">&nbsp;</li>
             <li class="large" style="background-image: url({% static 'spa/media/lake.jpg' %});">&nbsp;</li>
             <li class="small" style="background-image: url({% static 'spa/media/mountain.jpg' %});">&nbsp;</li>
+         -->
         </ul>
     </div>
     <hr>

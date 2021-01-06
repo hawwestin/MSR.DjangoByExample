@@ -189,7 +189,7 @@ Gallery
 	background-clip: content-box;
 	background-size: cover;
 	background-position: center;
-	background-color: #333
+	background-color: #333;
 }
 
 .gallery ul.grid{
@@ -205,6 +205,10 @@ Gallery
 
 .gallery .grid li.large{
 	flex-basis: 60%;
+}
+.gallery .grid li.empty{	
+	background-color: #fff;
+	height: auto;
 }
 
 /*-----------------
