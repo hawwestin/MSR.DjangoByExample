@@ -20,6 +20,4 @@ from . import views
 app_name = 'spa'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('grid', views.grid_css, name='grid'),
-    path('form', views.form_example, name='form'),
 ]
