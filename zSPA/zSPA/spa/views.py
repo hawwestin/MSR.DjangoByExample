@@ -8,7 +8,7 @@ def index(request, **kwargs):
 	context = {}
 	
 	context = {
-		'images': Images.objects.all()
+		'images': Images.objects.filter(is_active=True)
 	}
 
 	return render(request, 'spa/main_SPA.html', context)

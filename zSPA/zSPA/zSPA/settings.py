@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +24,7 @@ SECRET_KEY = 'pr1^8hy0+b1p%mmc#%=l*do^i5&4l5c19i)&b%-h*7y4oz$qs$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -122,12 +121,23 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "spa/static"),
-#     os.path.join(BASE_DIR, "grid_css/static"),
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR /  "spa" / "static",
+    BASE_DIR / "grid_css"/"static" ,
+    '/var/www/static/',
+]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATIC_ROOT = BASE_DIR / "cdn_test" / "static" 
+# os.path.join(BASE_DIR, 'static_root')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# any file field upload 
+MEDIA_ROOT =  BASE_DIR / "cdn_test" / "media" # os.path.join(BASE_DIR, 'media')
+
+#secured 
+PROTECTED_MEDIA = BASE_DIR / "cdn_test" / "protected"
+
+if DEBUG:
+    STATIC_ROOT.mkdir(parents=True, exist_ok=True)
+    MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
+    PROTECTED_MEDIA.mkdir(parents=True, exist_ok=True)

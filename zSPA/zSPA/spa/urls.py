@@ -21,3 +21,5 @@ app_name = 'spa'
 urlpatterns = [
     path('', views.index, name='index'),
 ]
+
+

@@ -30,7 +30,7 @@
             </ul>
         </nav>
     </header>
-    <div class="hero">
+    <div class="hero" style="background-image: url({% static 'spa/media/hero.jpg' %});">
         <div class="backgroud-image"></div>
         <h1>Beatuiful Alaska Photos</h1>
         <h3>Breathtaking Landscapes for Youre Viewing Pleasure</h3>
@@ -54,12 +54,6 @@
         <hr>
         <ul class="grid">
             {% include 'spa/includes/partial_gallery.html' %}
-
-            <!-- <li class="small" style="background-image: url({% static 'spa/media/cloud.jpg' %});">&nbsp;</li>
-            <li class="large" style="background-image: url({% static 'spa/media/iceberg.jpg' %});">&nbsp;</li>
-            <li class="large" style="background-image: url({% static 'spa/media/lake.jpg' %});">&nbsp;</li>
-            <li class="small" style="background-image: url({% static 'spa/media/mountain.jpg' %});">&nbsp;</li>
-         -->
         </ul>
     </div>
     <hr>
