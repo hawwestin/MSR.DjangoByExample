@@ -4,5 +4,5 @@ active.sh
 docker-compose.yml
 Dockerfile
 sublime*
-
 zSPA/cdn_test/*
+db.sqlite3
