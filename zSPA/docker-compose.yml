@@ -2,8 +2,22 @@ version: "3"
    
 services:
   web:
-    image: 192.168.50.7:6088/hawwestin/zspa_web:latest
-    command: python manage.py runserver 0.0.0.0:8000    
+    build:
+      context: .
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8090:8000"
+    volumes:
+      - ./zSPA:/zSPA 
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - googleForm=${googleForm}
+      - googleMaps=${googleMaps}
+
 

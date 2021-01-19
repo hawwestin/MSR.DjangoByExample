@@ -1,36 +1,36 @@
-FROM python:3.7.9
+FROM python:3.8-alpine
 
-# create and set working directory
-RUN mkdir /app
-WORKDIR /app
-# WORKDIR /zSPA
+ENV PATH="/scripts:${PATH}"
 
+RUN apk add --update --no-cache --virtual .tmp \
+gcc libc-dev linux-headers python3-dev \
+musl-dev \
+&& apk add --no-cache jpeg-dev zlib-dev \
+&& apk add --no-cache mariadb-dev
 
-# 
-ENV PYTHONUNBUFFERED=1
-ENV LANG C.UTF-8
-ENV PORT=8000
-EXPOSE $PORT
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        tzdata \
-        python3-setuptools \
-        python3-pip \        
-        && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk del .tmp
 
-# install environment dependencies
-RUN pip3 install --upgrade pip 
-#RUN pip3 install pipenv
+RUN mkdir /zSPA
+COPY ./zSPA /zSPA
 
-COPY requirements.txt .
+WORKDIR /zSPA
 
-# Install project dependencies
-RUN pip install -r requirements.txt
-
-COPY /zSPA .
+COPY ./scripts /scripts 
 COPY .env .
 
-CMD gunicorn zSPA.wsgi:application --bind 0.0.0.0:$PORT
+RUN chmod +x /scripts/*
+
+RUN mkdir -p /vol/web/media
+RUN mkdir -p /vol/web/static
+
+RUN adduser -D user
+
+RUN chown -R user:user /vol
+RUN chmod -R 755 /vol/web
+
+USER user
+
+CMD ["entrypoint.sh"]
