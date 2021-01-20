@@ -1,0 +1,32 @@
+version: "3"
+   
+services:
+  zspa:
+    build:
+      context: .    
+    volumes:
+      - static_data:/vol/web      
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DEBUG=False
+      - SECRET_KEY=${SECRET_KEY}
+      - googleForm=${googleForm}
+      - googleMaps=${googleMaps}
+      - ALLOWED_HOSTS='127.0.0.1'
+
+  proxy:
+    build:
+      context: ./proxy
+    volumes:
+      - static_data:/vol/static
+    ports:
+      - "8090:8080"
+    depends_on:
+      - zspa
+
+volumes:
+  static_data:
