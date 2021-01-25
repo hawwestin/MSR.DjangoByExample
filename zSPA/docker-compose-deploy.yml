@@ -6,17 +6,10 @@ services:
       context: .
     volumes:
       - static_data:/vol/web
+    env_file:
+      - .env
     environment:
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASS=${DB_PASS}
-      - DB_HOST=${DB_HOST}
-      - DB_PORT=${DB_PORT}
       - DEBUG=False
-      - SECRET_KEY=${SECRET_KEY}
-      - googleForm=${googleForm}
-      - googleMaps=${googleMaps}
-      - ALLOWED_HOSTS='127.0.0.1'
 
   proxy:
     build:
