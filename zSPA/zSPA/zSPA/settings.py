@@ -133,7 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/static/'
 
 # https://docs.djangoproject.com/en/3.1/ref/settings/#staticfiles-dirs
 # STATICFILES_DIRS = [
@@ -145,7 +145,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "cdn_test" / "static" 
 # os.path.join(BASE_DIR, 'static_root')
 
-MEDIA_URL = '/media/'
+MEDIA_URL = '/static/media/'
 # any file field upload 
 MEDIA_ROOT =  BASE_DIR / "cdn_test" / "media" 
 # os.path.join(BASE_DIR, 'media')
