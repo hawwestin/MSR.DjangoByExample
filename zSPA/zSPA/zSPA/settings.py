@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 
 
-from decouple import config
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,8 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Application definition
 
@@ -133,25 +132,33 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR /  "spa" / "static",
-    BASE_DIR / "grid_css"/"static" ,
-    '/var/www/static/',
-]
+# https://docs.djangoproject.com/en/3.1/ref/settings/#staticfiles-dirs
+# STATICFILES_DIRS = [
+#     BASE_DIR /  "spa" / "static",
+#     BASE_DIR / "grid_css" / "static" ,
+#     '/var/www/static/',
+# ]
 
 STATIC_ROOT = BASE_DIR / "cdn_test" / "static" 
 # os.path.join(BASE_DIR, 'static_root')
 
 MEDIA_URL = '/media/'
 # any file field upload 
-MEDIA_ROOT =  BASE_DIR / "cdn_test" / "media" # os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT =  BASE_DIR / "cdn_test" / "media" 
+# os.path.join(BASE_DIR, 'media')
 
 #secured 
 PROTECTED_MEDIA = BASE_DIR / "cdn_test" / "protected"
 
+if not DEBUG:
+    STATIC_ROOT = '/vol/web/static'
+    MEDIA_ROOT = '/vol/web/media'
+ 
 if DEBUG:
     STATIC_ROOT.mkdir(parents=True, exist_ok=True)
     MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
     PROTECTED_MEDIA.mkdir(parents=True, exist_ok=True)
+

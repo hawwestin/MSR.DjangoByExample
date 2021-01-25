@@ -23,6 +23,7 @@ COPY .env .
 
 RUN chmod +x /scripts/*
 
+# todo fix accoriding to settings.py
 RUN mkdir -p /vol/web/media
 RUN mkdir -p /vol/web/static
 

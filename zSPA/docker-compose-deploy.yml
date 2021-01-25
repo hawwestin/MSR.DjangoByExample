@@ -3,7 +3,7 @@ version: "3"
 services:
   zspa:
     build:
-      context: .    
+      context: .
     volumes:
       - static_data:/vol/web      
     environment:
