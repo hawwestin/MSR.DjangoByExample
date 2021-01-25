@@ -22,7 +22,7 @@ services:
     build:
       context: ./proxy
     volumes:
-      - static_data:/vol/static
+      - static_data:/vol
     ports:
       - "8090:8080"
     depends_on:
