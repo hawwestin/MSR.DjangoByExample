@@ -6,7 +6,7 @@ services:
       context: .
     command: sh -c "python manage.py runserver 0.0.0.0:8000"
     ports:
-      - "8090:8000"
+      - "8080:8000"
     volumes:
       - ./zSPA:/zSPA 
     environment:
@@ -19,5 +19,7 @@ services:
       - SECRET_KEY=${SECRET_KEY}
       - googleForm=${googleForm}
       - googleMaps=${googleMaps}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      
 
 
