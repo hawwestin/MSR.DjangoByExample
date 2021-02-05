@@ -2,25 +2,24 @@ version: "3"
    
 services:
   zspa:
-    build:
-      context: .
+    image: 192.168.50.7:6088/hawwestin/zspaweb:latest
     volumes:
       - static_data:/vol/web
     env_file:
       - .env
     environment:
       - DEBUG=False
+    depends_on:
+      proxy:
+        condition: service_started
 
   proxy:
-    build:
-      context: ./proxy
+    image: 192.168.50.7:6088/hawwestin/zspaproxy:latest
     volumes:
       - static_data:/vol
     ports:
       - "8090:8080"
-    depends_on:
-      zspa:
-        condition: service_started
+
 
 volumes:
   static_data:
