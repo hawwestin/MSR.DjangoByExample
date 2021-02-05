@@ -1,19 +1,25 @@
-version: "3.9"
+version: "3"
    
 services:
-  db:
-    image: postgres
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
   web:
-    build: .
-    command: python zSPA/manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/zSPA
+    build:
+      context: .
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
     ports:
-      - "8000:8000"
-    depends_on:
-      - db
+      - "8080:8000"
+    volumes:
+      - ./zSPA:/zSPA 
+    environment:
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - googleForm=${googleForm}
+      - googleMaps=${googleMaps}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      
+
 

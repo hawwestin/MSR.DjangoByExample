@@ -3,4 +3,6 @@ venv/
 active.sh
 docker-compose.yml
 Dockerfile
-sublime*/
+sublime*
+zSPA/cdn_test/*
+**/db.sqlite3

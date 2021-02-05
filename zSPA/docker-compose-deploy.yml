@@ -1,0 +1,26 @@
+version: "3"
+   
+services:
+  zspa:
+    build:
+      context: .
+    volumes:
+      - static_data:/vol/web
+    env_file:
+      - .env
+    environment:
+      - DEBUG=False
+
+  proxy:
+    build:
+      context: ./proxy
+    volumes:
+      - static_data:/vol
+    ports:
+      - "8080:8080"
+    depends_on:
+      zspa:
+        condition: service_started
+
+volumes:
+  static_data:

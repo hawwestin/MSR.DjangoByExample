@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
 from pathlib import Path
+
+
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,13 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'pr1^8hy0+b1p%mmc#%=l*do^i5&4l5c19i)&b%-h*7y4oz$qs$'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Application definition
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'spa.apps.SpaConfig',
+    'grid_css.apps.GridCssConfig',
+    'form_example.apps.FormExampleConfig',
 ]
 
 MIDDLEWARE = [
@@ -74,10 +77,21 @@ WSGI_APPLICATION = 'zSPA.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config('DB_NAME', default='zspa'),
+        'USER': config('DB_USER', default=''),
+        'PASSWORD': config('DB_PASS', default=''),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default=3307, cast=int),
     }
 }
 
@@ -118,4 +132,33 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
 STATIC_URL = '/static/'
+
+# https://docs.djangoproject.com/en/3.1/ref/settings/#staticfiles-dirs
+# STATICFILES_DIRS = [
+#     BASE_DIR /  "spa" / "static",
+#     BASE_DIR / "grid_css" / "static" ,
+#     '/var/www/static/',
+# ]
+
+STATIC_ROOT = BASE_DIR / "cdn_test" / "static" 
+# os.path.join(BASE_DIR, 'static_root')
+
+MEDIA_URL = '/media/'
+# any file field upload 
+MEDIA_ROOT =  BASE_DIR / "cdn_test" / "media" 
+# os.path.join(BASE_DIR, 'media')
+
+#secured 
+PROTECTED_MEDIA = BASE_DIR / "cdn_test" / "protected"
+
+if not DEBUG:
+    STATIC_ROOT = '/vol/web/static'
+    MEDIA_ROOT = '/vol/web/media'
+ 
+if DEBUG:
+    STATIC_ROOT.mkdir(parents=True, exist_ok=True)
+    MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
+    PROTECTED_MEDIA.mkdir(parents=True, exist_ok=True)
+
