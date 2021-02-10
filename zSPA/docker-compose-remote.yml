@@ -9,9 +9,7 @@ services:
       - .env
     environment:
       - DEBUG=False
-    depends_on:
-      proxy:
-        condition: service_started
+
 
   proxy:
     image: 192.168.50.7:6088/hawwestin/zspaproxy:latest
@@ -19,6 +17,8 @@ services:
       - static_data:/vol
     ports:
       - "8080:8080"
+    depends_on:
+      - zspa
 
 
 volumes:
