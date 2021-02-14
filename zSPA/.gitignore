@@ -1,1 +1,6 @@
+# Test Deployment of CDN 
 zSPA/cdn_test/*
+
+#SonarQube
+.scannerwork/*
+sonarscanner.bat
