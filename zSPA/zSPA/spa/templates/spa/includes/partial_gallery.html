@@ -1,5 +1,5 @@
 {% load static %}
-
+<ul class="grid">
 {% for image in images %}
 {% if image.image %}
 <li class="{{image.cssClass}}" alt="{{image.description}}" style="background-image: url({{ image.image.url }})">&nbsp;</li>
@@ -7,3 +7,4 @@
 {% empty %}
 <li class="empty"> Brak obrazów dostępnych w galerii. </li>
 {% endfor %}
+</ul>
