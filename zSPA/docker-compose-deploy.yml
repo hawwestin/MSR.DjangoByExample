@@ -2,6 +2,7 @@ version: "3"
    
 services:
   zspa:
+    image: 192.168.50.7:6088/hawwestin/zspaweb:latest
     build:
       context: .
     volumes:
@@ -12,6 +13,7 @@ services:
       - DEBUG=False
 
   proxy:
+    image: 192.168.50.7:6088/hawwestin/zspaproxy:latest
     build:
       context: ./proxy
     volumes:
