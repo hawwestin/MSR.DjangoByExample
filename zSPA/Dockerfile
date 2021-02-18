@@ -6,7 +6,8 @@ RUN apk add --update --no-cache --virtual .tmp \
 gcc libc-dev linux-headers python3-dev \
 musl-dev \
 && apk add --no-cache jpeg-dev zlib-dev \
-&& apk add --no-cache mariadb-dev
+&& apk add --no-cache mariadb-dev \
+&& apk add --no-cache dos2unix
 
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
@@ -19,7 +20,9 @@ COPY ./zSPA /zSPA
 WORKDIR /zSPA
 
 COPY ./scripts /scripts 
-COPY .env .
+COPY .env ./.env
+
+RUN dos2unix * /scripts/*
 
 RUN chmod +x /scripts/*
 

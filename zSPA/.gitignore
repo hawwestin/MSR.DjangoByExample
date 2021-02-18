@@ -1,1 +1,7 @@
+# Test Deployment of CDN 
 zSPA/cdn_test/*
+
+#SonarQube
+.scannerwork/*
+sonarscanner.sh
+/.branch_name
