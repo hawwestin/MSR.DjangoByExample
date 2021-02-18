@@ -3,4 +3,5 @@ zSPA/cdn_test/*
 
 #SonarQube
 .scannerwork/*
-sonarscanner.bat
+sonarscanner.sh
+/.branch_name
