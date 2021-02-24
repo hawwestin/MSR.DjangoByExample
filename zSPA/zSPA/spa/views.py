@@ -6,8 +6,12 @@ from .models import Images
 # Create your views here.
 
 def index(request, **kwargs):
-	context = {}
-	
+	"""
+	Render single page application and provide context data.
+	:param request:
+	:param kwargs:
+	:return:
+	"""
 	context = {
 		'images': Images.objects.filter(is_active=True),
 		'googleForm': config('googleForm'),

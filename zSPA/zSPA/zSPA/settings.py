@@ -11,12 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
 
-
 from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -73,7 +71,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'zSPA.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -85,9 +82,14 @@ DATABASES = {
         'PASSWORD': config('DB_PASS', default=''),
         'HOST': config('DB_HOST', default='localhost'),
         'PORT': config('DB_PORT', default=3307, cast=int),
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
+        'TEST': {
+            'NAME': 'test_zspa'
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -107,7 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -120,7 +121,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -135,23 +135,22 @@ STATIC_URL = '/static/'
 #     '/var/www/static/',
 # ]
 
-STATIC_ROOT = BASE_DIR / "cdn_test" / "static" 
+STATIC_ROOT = BASE_DIR / "cdn_test" / "static"
 # os.path.join(BASE_DIR, 'static_root')
 
 MEDIA_URL = '/media/'
 # any file field upload 
-MEDIA_ROOT =  BASE_DIR / "cdn_test" / "media" 
+MEDIA_ROOT = BASE_DIR / "cdn_test" / "media"
 # os.path.join(BASE_DIR, 'media')
 
-#secured 
+# secured
 PROTECTED_MEDIA = BASE_DIR / "cdn_test" / "protected"
 
 if not DEBUG:
     STATIC_ROOT = '/vol/web/static'
     MEDIA_ROOT = '/vol/web/media'
- 
+
 if DEBUG:
     STATIC_ROOT.mkdir(parents=True, exist_ok=True)
     MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
     PROTECTED_MEDIA.mkdir(parents=True, exist_ok=True)
-
