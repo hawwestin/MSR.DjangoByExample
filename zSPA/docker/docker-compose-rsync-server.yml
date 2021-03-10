@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  rsync_server:
+    image: eeacms/rsync
+    container_name: rsync_server
+    hostname: rsync_server
+    command: server
+    restart: unless-stopped
+    ports:
+      - "2222:22"
+    volumes:
+      - static_data:/data
+      - e_rsync_server_host_SSH:/etc/ssh/
+      - e_rsync_server_root_SSH:/root/.ssh/
+    environment:
+      - SSH_AUTH_KEY_1="Your client Key go here"
+
+volumes:
+  static_data:
+  e_rsync_server_host_SSH:
+  e_rsync_server_root_SSH:
