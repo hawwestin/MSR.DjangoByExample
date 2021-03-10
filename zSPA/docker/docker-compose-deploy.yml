@@ -4,7 +4,7 @@ services:
   zspa:
     image: 192.168.50.7:6088/hawwestin/zspaweb:latest
     build:
-      context: .
+      context: ./..
     volumes:
       - static_data:/vol/web
     env_file:
@@ -15,7 +15,7 @@ services:
   proxy:
     image: 192.168.50.7:6088/hawwestin/zspaproxy:latest
     build:
-      context: ./proxy
+      context: ./../proxy
     volumes:
       - static_data:/vol
     ports:

@@ -1,7 +1,7 @@
 .idea
 venv/
 active.sh
-docker-compose.yml
+docker/*.yml
 Dockerfile
 sublime*
 zSPA/cdn_test/*

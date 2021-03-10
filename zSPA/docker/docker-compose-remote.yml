@@ -24,7 +24,7 @@ services:
     container_name: zspa_rsync
     command: client
     volumes:
-      - static_data:/data☺
+      - static_data:/data
       - e_rsync_client_host_SSH:/etc/ssh/
       - e_rsync_client_root_SSH:/root/.ssh/
     environment:

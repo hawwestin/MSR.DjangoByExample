@@ -20,7 +20,7 @@ COPY ./zSPA /zSPA
 WORKDIR /zSPA
 
 COPY ./scripts /scripts 
-COPY .env ./.env
+COPY ./docker/.env ./.env
 
 RUN dos2unix * /scripts/*
 
