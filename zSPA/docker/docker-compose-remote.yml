@@ -1,0 +1,38 @@
+version: "3"
+   
+services:
+  zspa:
+    image: 192.168.50.7:6088/hawwestin/zspaweb:latest
+    volumes:
+      - static_data:/vol/web
+    env_file:
+      - .env
+    environment:
+      - DEBUG=False
+
+  proxy:
+    image: 192.168.50.7:6088/hawwestin/zspaproxy:latest
+    volumes:
+      - static_data:/vol
+    ports:
+      - "8080:8080"
+    depends_on:
+      - zspa
+
+  rsync:
+    image: eeacms/rsync
+    container_name: zspa_rsync
+    command: client
+    volumes:
+      - static_data:/data
+      - e_rsync_client_host_SSH:/etc/ssh/
+      - e_rsync_client_root_SSH:/root/.ssh/
+    environment:
+      - CRON_TASK_1=*/5 * * * * rsync -e 'ssh -p 2222' -aqx --numeric-ids root@192.168.50.7:/data/ /data >/dev/null 2>&1
+      - CRON_TASK_2=*/5 * * * * rsync -e 'ssh -p 2222' -aqx --numeric-ids /data/ root@192.168.50.7:/data >/dev/null 2>&1
+
+volumes:
+  static_data: null
+  e_rsync_client_host_SSH: null
+  e_rsync_client_root_SSH: null
+

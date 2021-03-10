@@ -146,11 +146,10 @@ MEDIA_ROOT = BASE_DIR / "cdn_test" / "media"
 # secured
 PROTECTED_MEDIA = BASE_DIR / "cdn_test" / "protected"
 
-if not DEBUG:
-    STATIC_ROOT = '/vol/web/static'
-    MEDIA_ROOT = '/vol/web/media'
-
 if DEBUG:
     STATIC_ROOT.mkdir(parents=True, exist_ok=True)
     MEDIA_ROOT.mkdir(parents=True, exist_ok=True)
     PROTECTED_MEDIA.mkdir(parents=True, exist_ok=True)
+else:
+    STATIC_ROOT = '/vol/web/static'
+    MEDIA_ROOT = '/vol/web/media'
