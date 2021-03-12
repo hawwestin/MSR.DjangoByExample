@@ -6,7 +6,7 @@ services:
     volumes:
       - static_data:/vol/web
     env_file:
-      - .env
+      - remote.env
     environment:
       - DEBUG=False
 

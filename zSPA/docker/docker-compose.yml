@@ -7,19 +7,34 @@ services:
     command: sh -c "python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8080:8000"
+    depends_on:
+      - db
     volumes:
       - ./../zSPA:/zSPA
+    env_file:
+      - deploy.env
     environment:
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASS=${DB_PASS}
-      - DB_HOST=${DB_HOST}
-      - DB_PORT=${DB_PORT}
-      - DEBUG=${DEBUG}
-      - SECRET_KEY=${SECRET_KEY}
-      - googleForm=${googleForm}
-      - googleMaps=${googleMaps}
-      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-      
+      - DEBUG=True
+      - DB_NAME=zspa
+      - DB_USER=user
+      - DB_PASS=password
+      - DB_HOST=db
+      - DB_PORT=3306
 
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'zspa'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
 
+  # Names our volume
+volumes:
+  my-db:

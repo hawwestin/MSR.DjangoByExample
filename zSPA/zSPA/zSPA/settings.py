@@ -78,10 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config('DB_NAME', default='zspa'),
-        'USER': config('DB_USER', default=''),
-        'PASSWORD': config('DB_PASS', default=''),
+        'USER': config('DB_USER', default='user'),
+        'PASSWORD': config('DB_PASS', default='password'),
         'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default=3307, cast=int),
+        'PORT': config('DB_PORT', default=3306, cast=int),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         },
