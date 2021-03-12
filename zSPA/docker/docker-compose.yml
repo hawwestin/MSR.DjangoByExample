@@ -22,7 +22,7 @@ services:
       - DB_PORT=3306
 
   db:
-    image: mysql:5.7
+    image: mariadb:10.5.9
     environment:
       MYSQL_DATABASE: 'zspa'
       MYSQL_USER: 'user'

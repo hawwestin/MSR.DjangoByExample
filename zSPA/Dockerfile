@@ -1,6 +1,7 @@
 FROM python:3.8-alpine
 
 ENV PATH="/scripts:${PATH}"
+ENV MIGRATE=false
 
 RUN apk add --update --no-cache --virtual .tmp \
 gcc libc-dev linux-headers python3-dev \

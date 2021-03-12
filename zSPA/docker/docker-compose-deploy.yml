@@ -16,6 +16,7 @@ services:
       - DB_PASS=password
       - DB_HOST=db
       - DB_PORT=3306
+      - MIGRATE=true
     depends_on:
       - db
 
@@ -31,7 +32,7 @@ services:
       - zspa
 
   db:
-    image: mysql:5.7
+    image: mariadb:10.5.9
     environment:
       MYSQL_DATABASE: 'zspa'
       MYSQL_USER: 'user'
