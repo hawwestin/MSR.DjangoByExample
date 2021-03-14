@@ -2,8 +2,8 @@
 
 set -e
 
-echo $MIGRATE
-echo "DEBUG " $DEBUG
+echo "Migrate Data: " $MIGRATE
+echo "Application is running with DEBUG: " $DEBUG
 
 # if some debug true make migrations
 if $MIGRATE  ; then
