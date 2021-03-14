@@ -3,15 +3,17 @@ version: "3"
 services:
   zspa:
     image: 192.168.50.7:6088/hawwestin/zspaweb:latest
+    container_name: zspa_web
     volumes:
       - static_data:/vol/web
     env_file:
-      - .env
+      - remote.env
     environment:
       - DEBUG=False
 
   proxy:
     image: 192.168.50.7:6088/hawwestin/zspaproxy:latest
+    container_name: zspa_proxy
     volumes:
       - static_data:/vol
     ports:

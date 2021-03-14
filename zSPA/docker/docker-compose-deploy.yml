@@ -8,9 +8,17 @@ services:
     volumes:
       - static_data:/vol/web
     env_file:
-      - .env
+      - deploy.env
     environment:
       - DEBUG=False
+      - DB_NAME=zspa
+      - DB_USER=user
+      - DB_PASS=password
+      - DB_HOST=db
+      - DB_PORT=3306
+      - MIGRATE=true
+    depends_on:
+      - db
 
   proxy:
     image: 192.168.50.7:6088/hawwestin/zspaproxy:latest
@@ -23,5 +31,20 @@ services:
     depends_on:
       - zspa
 
+  db:
+    image: mariadb:10.5.9
+    environment:
+      MYSQL_DATABASE: 'zspa'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
 volumes:
   static_data:
+  my-db:

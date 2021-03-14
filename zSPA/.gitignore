@@ -1,6 +1,8 @@
 # Test Deployment of CDN 
 zSPA/cdn_test/*
 
+*.env
+
 #SonarQube
 .scannerwork/*
 sonarscanner.sh
