@@ -1,14 +1,26 @@
 # Single page application 
 
-The app is built with the Django framework based on course materials from zenva.com course "The Complete Responsive Web Design Course" (marked as obsolete in Jan 2021).
+The app is built with the Django framework based on course materials from zenva.com course "The Complete Responsive Web Design Course" (marked as obsolete in Jan 2021). After this course, I cannot recommend this portal as a good place for learning. But the intellectual property, of course, is coded in this site. 
 
-After this course, I cannot recommend this portal as a good place for learning. But the intellectual property, of course, is coded in this site. 
+The general purpose of this file is to demonstrate the whole Web Development eco system needed to develop and test any product.
 
 # Config 
 
-sth about .env files 
+List of Environemnt variables used to configure the app.\
+Some may be provided in `.env` files loaded in section `env_file`  inside docker-compose-\*.yml file.  
 
-and list of Environemnt variables with thier purpose in table 
+Variable | Description | Deafult 
+------------ | ------------- | -------------
+DEBUG | SECURITY WARNING: don't run with debug turned on in production! | False
+SECRET_KEY |  SECURITY WARNING: keep the secret key used in production secret! | SECURITY WARNING: No Default Value
+ALLOWED_HOSTS | Ip or/and DNS name of the server | SECURITY WARNING: No Default Value
+DB_NAME | Name of databese in database server | zspa
+DB_USER | Name of user that have access to database | user
+DB_PASS | Password for the database user | password
+DB_HOST | IP or/and DNS name of the database server | localhost
+DB_PORT | Port to connect to the database | 3306
+googleForm | Link to google form for contact purpose | Empty
+googleMaps | Link to google maps of your company place | Empty 
 
 ## NGINX 
 
