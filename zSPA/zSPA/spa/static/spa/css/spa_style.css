@@ -301,6 +301,11 @@ Quote
 -----------------
 Contact
 ----------------- **/
+
+.noconfig--space{
+    padding : 3%;
+}
+
 section.contact-section{
 	width: 100%;
 	display: flex;
