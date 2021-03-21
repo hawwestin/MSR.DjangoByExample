@@ -8,7 +8,7 @@ DJANGO !!!
 
 # Config 
 
-List of Environemnt variables used to configure the app.\
+List of Environemnt variables used to configure the app.
 
 Some may be provided in `.env` files loaded in section `env_file`  inside docker-compose-\*.yml file.  
 ENV file is a list of environemnt variables that you don't want to repeat and store it once. Structure of the files looks liek this
@@ -43,64 +43,116 @@ googleMaps | Link to google maps of your company place | Empty
 
 Used as proxy to serve website and static files from the same host. 
 Aplied configuration allow to upload images up to 5M. Can be changed in proxy\default.conf `client_max_body_size` variable. \
-Default port to listen is 8080.\
+Default port to listen is 8080.
 
 ## Database 
 
-Database MariaDB or MySQL can be hosted localy on docker or remote server. \
+Database MariaDB or MySQL can be hosted locally on docker or remote server. \
 Migration to database can be done with usage of predefined default values in `settings.py` or to server defined in `.env`. \
 On localhost use \
 `python manage.py miakemigrations`
 And commit with \
-`python manage.py migrate` \
+`python manage.py migrate` 
 
 On higher env level than localhost use `MIGRATE` environment variable with docker on startup.
+With spread out environment this should be triggered only on demand. 
+Default for execution data base migration is set to false.   
 
 *SECURITY WARNING:* Super User for django admin portal must be done manually via localhost manage.py file commands configured to local or remote databese. 
+
+## Docker
+
+Configuration files provided in docker directory are mean to be used for development.
+Docker files can be used to test application, deploy it on remote test environment and self 
+host necessary tools that were used for development.
+
+Default `docker-compose.yml` contains configuration in debug mode for web app development.
+Second configuration file `docker-compose-deploy.yml` use NGINX as proxy server for testing in Debug mode on or off.
+Third file `docker-compose-remote.yml` is provided to host the app on different environment than localhost. 
+It can be called alfa, beta, integration or simple develop environment. 
+Many companies name it accordingly for their development process.   
+
+Some environment variables can be hold in dot env files. 
+
+There isn't `docker-compose-prodcution.yml` as this app is for learning purpose and this part 
+you can do on your own if you see value in this code to push it beyond.
+
 
 # Development
 
 It should be noticed that this repository is for learning purpose and the app is far from ready to go live production. This should demonstrate complex aspect of DevOps work needed to self host web application. 
 
-## Local
+## Localhost
 
-### Solution no.1 \
+Development on local machine support a few solutions which differentiate with DataBase server.
+As Django require some database to run and host necessary data in case of insufficient resources, 
+for local development may be used SQLite.
+
+### Solution no.1 
 On local you can use simple \
 `python manage.py runserver`
 And work with DEBUG set to True in `.env` file. \
 DataBase may be hosted on Docker if you not have other resources for remote one. \
-In this tpye of work you have full Django featured debugging app to work with. \
+In this type of work you have full Django featured debugging app to work with. 
 ### Solution no.2
-To Test if it works on Linux base system you can use `docker-compose.yml` file that binds to your local resources and lsiten on files changes. It is also bundled with MySQL server. 
+You can use `docker-compose.yml` file that binds to your local resources and listen on files changes. 
+It is also bundled with MySQL server. The preferred way as this will encourage usage of docker.  
 
-### Solution no.1B
-If you prefer to run python manage commands in your local terminal and does not have DB server you can start docker-compose and stop the web app. DB can run without app but then when you use all services you will have the same data inside. 
+### Solution no.3
+If you prefer to run python manage commands in your local terminal and 
+do not have MySQL DB server you can start `docker-compose.yml` and stop the web app. 
+DB will run without app. When you use all services you will have the same data inside. 
 
-### SonarQube 
+## SonarQube 
 
-sth about coverage 
+Static analysis tool that will keep guard on basic code style and catch issues. 
+In enterprise environment such tools hosted on company networks help with team work and collaboration.
+Once defined rule set will guide all developers with the same standards and principles.
+For stand alone development it will provide some feedback even if you code alone.
+As SonarQube provide good dashboard to display and browse code we can use it along PR to check 
+if new code does not introduce any issues to code base. 
 
+Beside analyzing code it also measure code coverage.
+For purpose of analysing project use most popular module [link](http://example.org)  
+Result of coverage script execution is a compressed xml file which is send to SonarQube Server. 
+Default Quality Gate require 80% code coverage. 
 
-## Docker
+To self host SonarQube service repository hold `docker-compose-sonarqube.yml` recipe.
+Be advise that SQ server require 2gb of memory but 3gb is recommended. 
+If its applicable SQ may be hosted on different device inside your network. 
 
-Second configuration file `docker-compose-deploy.yml` use NGINX as proxy server for testing in Debug mode on or off. 
+File `sonarqube.sh` shell script can be executed before code is merged to Lead branch `master`.. 
+To use the file a few settings must be provided as dotfiles. 
+- `.sonarHostUrl` provide IP/DNS address to SonarQube service.
+- `.sonarLogin` contains private access token generated on new project registration. For development purpose
+community edition is sufficient. 
+
+Each developer has different login token and may have different sonar address.  
+
+When those tools are used from beginning many issues are neglect or barely noticeable.
+
 
 # Deployment 
 
 
 ## Docker
 
-The remote docker compose contains no service for data base as on this level Data Base should be hosted on Robust and dedicated server. 
-In case of deploying the app on multiple nodes media like static files are copied via rsync network of client-server relation.
+The remote docker compose does not contains service for data base as on this level
+ Data Base should be hosted on Robust and dedicated server. 
+In case of deploying the app on multiple nodes media static files are copied via rsync network of client-server relation.
 
-Data base migration.
-To Migrate data in production ENV the MIGRATION env variable may be used. 
-Connection from local machine to remote data base may be better way to handle any error that may came along. 
-For this purpose on root level of project modifiy .env file with connection for remote DB server and execute commands. 
+Data base migration.\
+To Migrate data in remote ENV the MIGRATION env variable may be used. 
+Connection from local machine to remote data base may be better way to handle any error 
+that may came along. 
+For this purpose on root level of project modify .env file with connection for remote DB 
+server and execute commands. 
 
 ## Database
 
-Should be used DataBase installed on dedicated machine that is secured to protect data. For this reason `docker-compose-remote.yml` does not contain db service. ENV file or inline environemnt variables should be provided instead. 
+Should be used DataBase installed on dedicated machine that is secured to protect data. 
+For this reason `docker-compose-remote.yml` does not contain db service. 
+ENV file or inline environment variables should be provided instead. 
 
 ## Rsync
 
