@@ -4,8 +4,11 @@ The app is built with the Django framework based on course materials from zenva.
 
 The general purpose of this file is to demonstrate the whole Web Development eco system needed to develop and test any product.
 
-DJANGO !!! 
-
+For demonstration this Django project has been kept as simple as possible but with usage of most common development tasks.  
+ - File upload
+ - DataBase migration 
+ - Manage of static files from proxy
+ 
 # Config 
 
 List of Environemnt variables used to configure the app.
