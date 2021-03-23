@@ -156,3 +156,40 @@ ENV file or inline environment variables should be provided instead.
 
 ## Rsync
 
+For media files backup there is client server [Rsync](https://linux.die.net/man/1/rsync) 
+set with docker image of [eeacms/rsync](https://hub.docker.com/r/eeacms/rsync).
+Basic usage you can find and learn [here](https://www.digitalocean.com/community/tutorials/how-to-use-rsync-to-sync-local-and-remote-directories).
+
+### Client 
+Client that is configured in `docker-compose-remote.yml` will use ssh keys aut generated on start up. 
+The first handshake with server have to be done manually within container after you provide public key it the server. 
+This have to be done once after you add new machine to development environment. 
+
+Other solution is to mount volume to host keys like:
+```yaml
+   volumes:
+      - static_data:/data
+      - /etc/ssh/:/etc/ssh/
+      - /root/.ssh/:/root/.ssh/
+```
+With this mounted keys form the host you inherit all known hosts and the handshake with new server will be valid inside docker container.
+
+This can be achieved with simple dry run of Rsync command that provides address to your server. 
+```bash
+rsync -e 'ssh -p 2222 -i ~/.ssh/erysnc' -anvx --numeric-ids root@10.10.0.10:/data/ /docker/ersync/data
+```
+
+Cron task will periodically push and pull images form the server. Maintaining backup for data.
+In this example app we were practicing sync of images but this solution will backup any data for given directories. 
+In `docker-compose-remote.yml` you have to provide IP/DNS to your rsync Server. 
+
+### Server
+Server `docker-compose-rsync-server.com` contains pre configured server that can be deployed on remote. 
+To connect client you have to add new environment key with name of `SSH_AUTH_KEY_{{nameOfTheClient}}` where
+nameOfTheClient is for maintain purpose to easily identify keys in env variable list. 
+
+If server keys are refreshed you can purge keys on client machines with command
+```bash
+ssh-keygen -f "/root/.ssh/known_hosts" -R "[10.10.0.10]:2222"
+```
+Then you have to perform handshake and download latest public key of the server. 
