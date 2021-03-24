@@ -116,7 +116,7 @@ As SonarQube provide good dashboard to display and browse code we can use it alo
 if new code does not introduce any issues to code base. 
 
 Beside analyzing code it also measure code coverage.
-For purpose of analysing project use most popular module [link](http://example.org)  
+For purpose of analysing and making valid file for sonarqube project use most popular module [coveragepy](https://github.com/nedbat/coveragepy). 
 Result of coverage script execution is a compressed xml file which is send to SonarQube Server. 
 Default Quality Gate require 80% code coverage. 
 
