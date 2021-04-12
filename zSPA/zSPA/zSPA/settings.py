@@ -14,6 +14,8 @@ from pathlib import Path
 from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from spa.apps import SpaConfig
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -115,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': config('log_disable_existing_loggers', default='True'),
     'formatters': {
         'verbose': {
             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
@@ -124,6 +126,16 @@ LOGGING = {
         'simple': {
             'format': '{levelname} {message}',
             'style': '{',
+        },
+        'logstash': {
+            '()': 'logstash_async.formatter.DjangoLogstashFormatter',
+            'message_type': 'python-logstash',
+            'fqdn': False,  # Fully qualified domain name. Default value: false.
+            'extra_prefix': 'dev',  #
+            'extra': {
+                'application': SpaConfig.name,
+                'environment': config('log_environment', default='develop')
+            }
         },
     },
     'filters': {
@@ -144,20 +156,40 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
+        'logstash': {
+            'level': 'DEBUG',
+            'class': 'logstash_async.handler.AsynchronousLogstashHandler',
+            'formatter': 'logstash',
+            'transport': 'logstash_async.transport.TcpTransport',
+            'host': config('log_host', default='127.0.0.1'),
+            'port': config('log_port', default=5000, cast=int),
+            'ssl_enable': False,
+            'ssl_verify': False,
+            'database_path': None,
+        },
     },
     'root': {
-        'handlers': ['console'],
-        'level': 'WARNING',
+        'handlers': ['console', 'logstash'],
+        'level': config('log_level', default='WARNING'),
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
-            'level': 'INFO',
-            'propagate': False,
+            'handlers': ['file', 'console', 'logstash'],
+            'level': config('log_level', default='INFO'),
+            'propagate': True,
         },
+        'django.request': {
+            'handlers': ['logstash'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.security': {
+            'handlers': ['logstash'],
+            'level': 'DEBUG',
+            'propagate': True,
+        }
     },
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
