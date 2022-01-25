@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
+from datetime import date
 
 from decouple import config, Csv
 
@@ -115,9 +116,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/logging/
 # https://python-logstash-async.readthedocs.io/en/latest/index.html
 
+LOGS_FILE_PATH = f'/var/log/zspa/django-{date.today()}.log'
+
+if DEBUG:
+    LOGS_FILE_PATH = f'logs/INFO-{date.today()}.log'
+
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': config('log_disable_existing_loggers', default='True'),
+    'disable_existing_loggers': config('log_disable_existing_loggers', default='False'),
     'formatters': {
         'verbose': {
             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
@@ -147,11 +153,11 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': 'logs/INFO.log',
+            'filename': LOGS_FILE_PATH,
             'formatter': 'verbose'
         },
         'console': {
-            'level': 'INFO',
+            'level': 'DEBUG',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
@@ -161,7 +167,7 @@ LOGGING = {
             'class': 'logstash_async.handler.AsynchronousLogstashHandler',
             'formatter': 'logstash',
             'transport': 'logstash_async.transport.TcpTransport',
-            'host': config('log_host', default='127.0.0.1'),
+            'host': config('log_host', default='localhost'),
             'port': config('log_port', default=5000, cast=int),
             'ssl_enable': False,
             'ssl_verify': False,

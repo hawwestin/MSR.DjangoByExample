@@ -1,5 +1,5 @@
 version: "3"
-   
+
 services:
   zspa:
     build:
@@ -34,6 +34,21 @@ services:
       - '3306'
     volumes:
       - my-db:/var/lib/mysql
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:7.16.3
+    command: filebeat -e -strict.perms=false
+    env_file:
+      - 'remote.elastic.env'
+    volumes:
+      - type: bind
+        source: ./../zSPA/logs
+        target: /var/log/django/
+        read_only: true
+      - type: bind
+        source: ./environment/elk/filebeat/filebeat.docker.yml
+        target: /usr/share/filebeat/filebeat.yml
+        read_only: true
 
   # Names our volume
 volumes:
