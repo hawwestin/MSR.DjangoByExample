@@ -10,10 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
+from datetime import date
 
 from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from spa.apps import SpaConfig
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -108,6 +111,91 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Logs
+# https://docs.djangoproject.com/en/3.1/topics/logging/
+# https://python-logstash-async.readthedocs.io/en/latest/index.html
+
+LOGS_FILE_PATH = f'/var/log/zspa/django-{date.today()}.log'
+
+if DEBUG:
+    LOGS_FILE_PATH = f'logs/INFO-{date.today()}.log'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': config('log_disable_existing_loggers', default='False'),
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+        'logstash': {
+            '()': 'logstash_async.formatter.DjangoLogstashFormatter',
+            'message_type': 'python-logstash',
+            'fqdn': False,  # Fully qualified domain name. Default value: false.
+            'extra_prefix': 'dev',  #
+            'extra': {
+                'application': SpaConfig.name,
+                'environment': config('log_environment', default='develop')
+            }
+        },
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': LOGS_FILE_PATH,
+            'formatter': 'verbose'
+        },
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'logstash': {
+            'level': 'DEBUG',
+            'class': 'logstash_async.handler.AsynchronousLogstashHandler',
+            'formatter': 'logstash',
+            'transport': 'logstash_async.transport.TcpTransport',
+            'host': config('log_host', default='localhost'),
+            'port': config('log_port', default=5000, cast=int),
+            'ssl_enable': False,
+            'ssl_verify': False,
+            'database_path': None,
+        },
+    },
+    'root': {
+        'handlers': ['console', 'logstash'],
+        'level': config('log_level', default='WARNING'),
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console', 'logstash'],
+            'level': config('log_level', default='INFO'),
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['logstash'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.security': {
+            'handlers': ['logstash'],
+            'level': 'DEBUG',
+            'propagate': True,
+        }
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
